@@ -34,7 +34,7 @@ app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */
 const storage = multer.diskStorage({
-  destination: function (_, _, cb) {
+  destination: function (_, __, cb) {
     cb(null, "public/assets");
   },
   filename: function (_, file, cb) {
@@ -73,3 +73,7 @@ mongoose
     // Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
+
+/**
+ * Placeholder variables: _ __
+ */
